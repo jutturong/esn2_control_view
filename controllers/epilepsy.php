@@ -40,8 +40,8 @@ LIMIT 0 , 30
         SELECT * FROM `04__monitoring` LEFT JOIN `laboratorytype` ON `04__monitoring`.`Lab`=`laboratorytype`.`LabCode` WHERE `04__monitoring`.`Lab` IN ( 64, 66, 67, 101 )
             */
           
-           $objquery=$this->db->query(" SELECT * FROM `04__monitoring` LEFT JOIN `laboratorytype` ON `04__monitoring`.`Lab`=`laboratorytype`.`LabCode` WHERE `04__monitoring`.`Lab` IN ( 64, 66, 67, 101 )");
-           
+           $objquery=$this->db->query(" SELECT * FROM `04__monitoring` LEFT JOIN `laboratorytype` ON `04__monitoring`.`Lab`=`laboratorytype`.`LabCode` WHERE `04__monitoring`.`Lab` IN ( 64, 66, 67, 101 )  ORDER BY `04__monitoring`.`MonitoringDate` DESC ");
+           //SELECT * FROM `04__monitoring` LEFT JOIN `laboratorytype` ON `04__monitoring`.`Lab`=`laboratorytype`.`LabCode` WHERE `04__monitoring`.`Lab` IN ( 64, 66, 67, 101 ) ORDER BY `04__monitoring`.`MonitoringDate` DESC 
            
            
            //$result["total"]=$row[0];
@@ -74,33 +74,38 @@ LIMIT 0 , 30
              echo  br();
              echo   $Severity_of_Attack=$this->input->get_post('Severity_of_Attack'); //67
              echo  br();
+             
+             
+             
              echo   $MonitoringDate=$this->input->get_post('MonitoringDate');  //MonitoringDate->format  17/11/2551
              echo  br();
-             
-              $exDate=  explode("/", $MonitoringDate );
-              echo  $Y=$exDate[2]+543;
-              echo br();
-              echo   $conDMY=$exDate[0]."/".$exDate[1]."/".$Y;
-              echo br();
-                
+             if(strlen( $MonitoringDate) > 0 )
+             {
+                        $exDate=  explode("/", $MonitoringDate );
+                        echo  $Y=$exDate[2]+543;
+                        echo br();
+                        echo   $conDMY=$exDate[0]."/".$exDate[1]."/".$Y;
+                        echo br();
+             }
                 
               $tb="`04__monitoring`";
            
               
-         if(strlen(  $frequency    ) >  0   )     
+         if(    strlen(  $frequency    ) >  0    )     
          {    
+             $this->db->set('HN', $HN_epilepsy  );   
              $this->db->set('Clinic', 'Epilepsy Clinic' );   
              $this->db->set('Lab', '64' );   
              $this->db->set('Value', $frequency ); 
              $ck64=$this->db->insert($tb);
                   if( $ck64 )
                     {
-                        echo "บันทึกสำเร็จ";
+                        echo "บันทึกสำเร็จ frequency ";
                     }
-                else
-                {
-                     echo "บันทึกล้มเหลว";
-                }
+                    else
+                    {
+                         echo "บันทึกล้มเหลว";
+                    }
          }
          
     
