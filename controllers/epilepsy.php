@@ -85,28 +85,25 @@ LIMIT 0 , 30
        
        public function insert_epi()
        {
-             echo    $HN_epilepsy=$this->input->get_post('HN_epilepsy');
-             echo  br();
-             echo    $frequency=$this->input->get_post('frequency'); //64
-             echo br();
-             echo    $clinic_response=$this->input->get_post('clinic_response'); //66
-             echo br();
-             echo   $Duration_of_Attack=$this->input->get_post('Duration_of_Attack');  //101
-             echo  br();
-             echo   $Severity_of_Attack=$this->input->get_post('Severity_of_Attack'); //67
-             echo  br();
-             
-             
-             
-             echo   $MonitoringDate=$this->input->get_post('MonitoringDate');  //MonitoringDate->format  17/11/2551
-             echo  br();
+                 $HN_epilepsy=$this->input->get_post('HN_epilepsy');
+             //echo  br();
+                $frequency=$this->input->get_post('frequency'); //64
+            // echo br();
+                $clinic_response=$this->input->get_post('clinic_response'); //66
+            // echo br();
+                $Duration_of_Attack=$this->input->get_post('Duration_of_Attack');  //101
+           //  echo  br();
+              $Severity_of_Attack=$this->input->get_post('Severity_of_Attack'); //67
+           //  echo  br();
+             $MonitoringDate=$this->input->get_post('MonitoringDate');  //MonitoringDate->format  17/11/2551
+            // echo  br();
              if(strlen( $MonitoringDate) > 0 )
              {
                         $exDate=  explode("/", $MonitoringDate );
-                        echo  $Y=$exDate[2]+543;
-                        echo br();
-                        echo   $conDMY=$exDate[0]."/".$exDate[1]."/".$Y;
-                        echo br();
+                        $Y=$exDate[2]+543;
+                      //  echo br();
+                       $conDMY=$exDate[0]."/".$exDate[1]."/".$Y;
+                       // echo br();
              }
                 
               $tb="`04__monitoring`";
@@ -120,6 +117,8 @@ LIMIT 0 , 30
              $this->db->set('Value', $frequency ); 
              $this->db->set('MonitoringDate',$conDMY);
              $ck64=$this->db->insert($tb);
+             
+             /*
                   if( $ck64 )
                     {
                         echo "บันทึกสำเร็จ frequency ";
@@ -128,6 +127,9 @@ LIMIT 0 , 30
                     {
                          echo "บันทึกล้มเหลว";
                     }
+              * 
+              */
+             
          }
          
          if(    strlen(  $clinic_response    ) >  0    &&  $conDMY != ""    )//66     
@@ -138,6 +140,8 @@ LIMIT 0 , 30
              $this->db->set('Value', $clinic_response ); 
              $this->db->set('MonitoringDate',$conDMY);
              $ck66=$this->db->insert($tb);
+             
+             /*
                   if( $ck66 )
                     {
                         echo "บันทึกสำเร็จ clinic_response ";
@@ -146,6 +150,8 @@ LIMIT 0 , 30
                     {
                          echo "บันทึกล้มเหลว";
                     }
+                 */   
+                    
          }
          
             if(    strlen(   $Duration_of_Attack       ) >  0  &&  $conDMY != ""  )//101    
@@ -156,6 +162,8 @@ LIMIT 0 , 30
              $this->db->set('Value',  $Duration_of_Attack ); 
              $this->db->set('MonitoringDate',$conDMY);
              $ck101=$this->db->insert($tb);
+             
+             /*
                   if( $ck101 )
                     {
                         echo "บันทึกสำเร็จ Duration_of_Attack ";
@@ -164,6 +172,8 @@ LIMIT 0 , 30
                     {
                          echo "บันทึกล้มเหลว";
                     }
+                 */   
+                    
          }
          
          if(    strlen(    $Severity_of_Attack      ) >  0  &&  $conDMY != ""  )//67  
@@ -174,6 +184,8 @@ LIMIT 0 , 30
              $this->db->set('Value',   $Severity_of_Attack ); 
              $this->db->set('MonitoringDate',$conDMY);
              $ck67=$this->db->insert($tb);
+             
+             /*
                   if( $ck67 )
                     {
                         echo "บันทึกสำเร็จ  Severity_of_Attack ";
@@ -182,6 +194,8 @@ LIMIT 0 , 30
                     {
                          echo "บันทึกล้มเหลว";
                     }
+                */    
+                    
          }
          
          
