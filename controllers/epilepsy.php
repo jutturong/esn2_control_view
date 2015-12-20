@@ -26,9 +26,20 @@ var  $name_app1="(Appendix 1 ) แบบบันทึกข้อมูลพ�
            $tbj1="laboratorytype2";
            
            //$this->db->join($tbj1,$tb.".Lab=".$tbj1.".Lab_value");
-           $objquery=$this->db->get_where($tb,array('Clinic'=>'Epilepsy Clinic'),10,0);
+       //    $objquery=$this->db->get_where($tb,array('Clinic'=>'Epilepsy Clinic'),10,0);
            
+           /*
+            SELECT *
+FROM `laboratorytype`
+WHERE `LabCode`
+IN ( 64, 66, 67, 101 )
+LIMIT 0 , 30
+            * 
+            SELECT * FROM `04__monitoring` WHERE Lab IN ( 64, 66, 67, 101 )
+            */
           
+           $objquery=$this->db->query("SELECT * FROM `04__monitoring` WHERE Lab IN ( 64, 66, 67, 101 )");
+           
            //$result["total"]=$row[0];
            $va_arr = array(); 
            foreach($objquery->result() as $row )
