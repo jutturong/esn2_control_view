@@ -64,7 +64,59 @@ LIMIT 0 , 30
        
        public function insert_epi()
        {
-            echo   $HN_epilepsy=$this->input->get_post('HN_epilepsy');
+             echo    $HN_epilepsy=$this->input->get_post('HN_epilepsy');
+             echo  br();
+             echo    $frequency=$this->input->get_post('frequency'); //64
+             echo br();
+             echo    $clinic_response=$this->input->get_post('clinic_response'); //66
+             echo br();
+             echo   $Duration_of_Attack=$this->input->get_post('Duration_of_Attack');  //101
+             echo  br();
+             echo   $Severity_of_Attack=$this->input->get_post('Severity_of_Attack'); //67
+             echo  br();
+             echo   $MonitoringDate=$this->input->get_post('MonitoringDate');  //MonitoringDate->format  17/11/2551
+             echo  br();
+             
+              $exDate=  explode("/", $MonitoringDate );
+              echo  $Y=$exDate[2]+543;
+              echo br();
+              echo   $conDMY=$exDate[0]."/".$exDate[1]."/".$Y;
+              echo br();
+                
+                
+              $tb="`04__monitoring`";
+           
+              
+         if(strlen(  $frequency    ) >  0   )     
+         {    
+             $this->db->set('Clinic', 'Epilepsy Clinic' );   
+             $this->db->set('Lab', '64' );   
+             $this->db->set('Value', $frequency ); 
+             $ck64=$this->db->insert($tb);
+                  if( $ck64 )
+                    {
+                        echo "บันทึกสำเร็จ";
+                    }
+                else
+                {
+                     echo "บันทึกล้มเหลว";
+                }
+         }
+         
+    
+         
+         
+             
+             /*
+              *             SELECT *
+FROM `laboratorytype`
+WHERE `LabCode`
+IN ( 64, 66, 67, 101 )
+LIMIT 0 , 30
+            * 
+              */
+             
+             
            
        }
        
