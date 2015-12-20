@@ -40,13 +40,13 @@
                         },
                         success:function(data){
                             $.messager.alert('สถานะของการบันทึกข้อมูล',data,'info');
-                            $('#dg').datagrid('reload');
+                         
                         }
         
              });
+             
+                $('#dg').datagrid('reload');  //  $('#tb_EEG').datagrid('reload');
            
-                  
-          
       }
 </script>
     
