@@ -34,11 +34,13 @@
       {
             $('#fm_epilepsy').form('submit',
             { 
-                        onSubmit:function(data){
+                       url:'<?=base_url()?>index.php/epilepsy/insert_epi',
+                      onSubmit:function(data){
                            
                         },
                         success:function(data){
-                             $.messager.alert(data);
+                            $.messager.alert('สถานะของการบันทึกข้อมูล',data,'info');
+                            $('#dg').datagrid('reload');
                         }
         
              });
@@ -133,7 +135,7 @@
                     Clinical Response (66) :
                 </td>
                 <td>
-                    <input   class="easyui-textbox" id="clinic_response" name="clinic_response" style="width:200px;height:40px" data-options="readonly:true,iconCls:'icon-print',size:'large', ">
+                    <input   class="easyui-textbox" id="clinic_response" name="clinic_response" style="width:200px;height:40px" data-options="readonly:false,iconCls:'icon-print',size:'large', ">
                 </td>
             </tr>
             
