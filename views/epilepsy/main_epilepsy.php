@@ -39,13 +39,14 @@
                            
                         },
                         success:function(data){
-                            $.messager.alert('สถานะของการบันทึกข้อมูล',data,'info');
-                         
+                              // $.messager.alert('สถานะของการบันทึกข้อมูล',data,'info');
+                                         $('#dg').datagrid('reload');  //  $('#tb_EEG').datagrid('reload');
+                                         $('#add_epilepsy').dialog('close');
                         }
         
              });
-             
-                $('#dg').datagrid('reload');  //  $('#tb_EEG').datagrid('reload');
+                
+
            
       }
 </script>
