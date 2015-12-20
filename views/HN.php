@@ -165,6 +165,18 @@
                                                       
                               }) 
                               
+       //--------------------- Epilepsy Clinic ------------------------------
+       //http://drugstore.kku.ac.th/esn2/index.php/epilepsy/fetch_epi     
+              $('#dg').datagrid({
+                   url:'<?=base_url()?>index.php/epilepsy/fetch_epi/'   + $("#HN_main").textbox('getText'),
+                                columns:[[
+                                            {   field:'MonitoringDate',title:'MonitoringDate' } ,
+                                            {     field:'HN',title:'HN' },
+                                            {      field:'Lab',title:'Lab' },
+                                            {      field:'Value',title:'Value' },
+                   ]]
+              })                                  
+                   
                               
         
         // #-- data grid appendix 1 
