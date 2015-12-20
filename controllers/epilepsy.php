@@ -35,10 +35,14 @@ WHERE `LabCode`
 IN ( 64, 66, 67, 101 )
 LIMIT 0 , 30
             * 
-            SELECT * FROM `04__monitoring` WHERE Lab IN ( 64, 66, 67, 101 )
+           
+            * 
+        SELECT * FROM `04__monitoring` LEFT JOIN `laboratorytype` ON `04__monitoring`.`Lab`=`laboratorytype`.`LabCode` WHERE `04__monitoring`.`Lab` IN ( 64, 66, 67, 101 )
             */
           
-           $objquery=$this->db->query("SELECT * FROM `04__monitoring` WHERE Lab IN ( 64, 66, 67, 101 )");
+           $objquery=$this->db->query(" SELECT * FROM `04__monitoring` LEFT JOIN `laboratorytype` ON `04__monitoring`.`Lab`=`laboratorytype`.`LabCode` WHERE `04__monitoring`.`Lab` IN ( 64, 66, 67, 101 )");
+           
+           
            
            //$result["total"]=$row[0];
            $va_arr = array(); 
