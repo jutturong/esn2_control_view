@@ -51,7 +51,15 @@
       }
 </script>
     
-
+<script type="text/javascript">
+            //clinic_response
+      $(function(){
+            $('#clinic_response').textbox('textbox').bind('keydown',function(e){
+                  if(e.keyCode==13){  alert('t'); }
+            });
+             
+      });
+</script>
     
     
     <table id="dg" title="Epilepsy Clinic" class="easyui-datagrid" style="width:700px;height:250px"
@@ -136,7 +144,12 @@
                     Clinical Response (66) :
                 </td>
                 <td>
-                    <input   class="easyui-textbox" id="clinic_response" name="clinic_response" style="width:200px;height:40px" data-options="readonly:false,iconCls:'icon-print',size:'large', ">
+                    <input   class="easyui-textbox" id="clinic_response" name="clinic_response" style="width:200px;height:40px" 
+                             data-options="
+                             readonly:false,
+                             iconCls:'icon-print',
+                             
+                             size:'large', ">
                 </td>
             </tr>
             
