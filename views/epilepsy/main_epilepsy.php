@@ -52,6 +52,42 @@
 </script>
     
 <script type="text/javascript">
+    
+         function calEPI_()
+         {
+                 //  $.messager.alert("","test","");
+               var  a= parseInt( $('#frequency').numberspinner('getValue') );  //ชักครั้งก่อน
+               var  b= parseInt( $('#clinic_response').textbox('getValue') ); //ชักปัจจุบัน
+               
+        
+                  //$('#calEPI').textbox('setValue','test');
+                  if(  b >= 0  &&  a >= 0  )
+                                {
+                                      
+                                       if( b > a )
+                                    {
+                                        ya=(100*b)/a;
++                                      y2=ya-100;
++                                      if(  y2  <= 25 )
++                                      {
++                                         //$("#clinic_response").val('Same');
+                                             //alert('Same'); 
+                                             $('#calEPI').textbox('setValue','Same');
++                                      }
++                                      else if (    y2  > 25 )
++                                      {
++                                         //$("#clinic_response").val('Worse');
+                                            //alert('Worse');  
+                                            $('#calEPI').textbox('setValue','Worse');
++                                      }
+                                    }
+                                    
+                                }
+               
+         
+    }
+    
+    /*
             //clinic_response
       $(function(){
              var  a= parseInt( $('#frequency').numberspinner('getValue') );  //ชักครั้งก่อน
@@ -116,6 +152,9 @@
             });
              
       });
+      */
+     
+     
 </script>
     
     
@@ -154,7 +193,7 @@
 101=Duration of Attack
 -->
 
-<div id="add_epilepsy" class="easyui-dialog" style="width:500px;height:500px;padding:10px 20px"
+<div id="add_epilepsy" class="easyui-dialog" style="width:800px;height:500px;padding:10px 20px"
             closed="true" buttons="#dlg-buttons" data-options=" modal:true ">
         <!-- <div class="ftitle">เพิ่มข้อมูล Epilepsy Clinic</div> -->
         <form id="fm_epilepsy" method="post" novalidate>
@@ -189,24 +228,23 @@
             <tr>
                 <td>
                 Frequency (time/month) (64) :
+                
                 </td>
                 <td>
-                    <input   class="easyui-numberspinner" style="width:90px" id="frequency" name="frequency" data-options="min:1,max:100,editable:false">
+                    <input   class="easyui-numberbox"   style="width:50px;height:40px"   id="frequency" name="frequency" >
                 </td>    
             </tr>
             
             
             <tr>
                 <td>
-                    Clinical Response (66) :
+                    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" style="width:200px"  onclick="calEPI_()">Clinical Response (66) :</a>
                 </td>
                 <td>
-                    <input   class="easyui-textbox" id="clinic_response" name="clinic_response" style="width:200px;height:40px" 
-                             data-options="
-                             readonly:false,
-                             iconCls:'icon-print',
-                             
-                             size:'large', ">
+                    <input   class="easyui-numberbox" id="clinic_response" name="clinic_response" style="width:50px;height:40px"  />
+                       
+                    <input class="easyui-textbox"  id="calEPI"  style="width:100px;height: 40px;"  data-options="  readonly:true,  iconCls:'icon-print', size:'large' "/>
+                    
                 </td>
             </tr>
             
