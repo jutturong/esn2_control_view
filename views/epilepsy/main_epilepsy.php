@@ -90,19 +90,23 @@
                                         if( y2 > 25  &&  y2 <=50 )
                                         {
                                            // $("#clinic_response").val('Moderated Improvement');
+                                            alert('Moderated Improvement');    
                                         }
                                         else if ( y2 > 50  )
                                         {
                                            //  $("#clinic_response").val('Marked Improvement');
+                                           alert('Marked Improvement');    
                                         }
                                         else if  ( y2 <= 25 )
                                         {
                                            // $("#clinic_response").val('Same');
+                                             alert('Same');    
                                         }
                                 }
                                 else  if  ( b = a  ) // ไม่เพิ่มไม่ลด  ECli5=Seizure free หมายถึง ไม่ชักเลย ต้องเป็น 0  เท่าเดิม
                                 {
                                        // $("#clinic_response").val('Seizure free');
+                                       alert('Seizure free');    
                                  
                                 }
 
