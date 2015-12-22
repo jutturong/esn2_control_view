@@ -60,29 +60,13 @@
                var  b= parseInt( $('#clinic_response').textbox('getValue') ); //ชักปัจจุบัน
                
         
-                  //$('#calEPI').textbox('setValue','test');
-                  if(  b >= 0  &&  a >= 0  )
+            
+                   if(  b >= 0  &&  a >= 0  )
                                 {
-                                      
-                                       if( b > a )
-                                    {
-                                        ya=(100*b)/a;
-+                                      y2=ya-100;
-+                                      if(  y2  <= 25 )
-+                                      {
-+                                         //$("#clinic_response").val('Same');
-                                             //alert('Same'); 
-                                             $('#calEPI').textbox('setValue','Same');
-+                                      }
-+                                      else if (    y2  > 25 )
-+                                      {
-+                                         //$("#clinic_response").val('Worse');
-                                            //alert('Worse');  
-                                            $('#calEPI').textbox('setValue','Worse');
-+                                      }
-                                    }
+                                          $('#calEPI').textbox('setValue',a+b);
                                     
                                 }
+                 
                
          
     }
