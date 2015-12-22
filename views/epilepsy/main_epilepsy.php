@@ -54,8 +54,13 @@
 <script type="text/javascript">
             //clinic_response
       $(function(){
+             var frequency=$('#frequency').numberspinner('getValue');
             $('#clinic_response').textbox('textbox').bind('keydown',function(e){
-                  if(e.keyCode==13){  alert('t'); }
+                  if(e.keyCode==13)
+                    {  
+                         //alert('ทดสอบ');
+                         alert(frequency);
+                    }
             });
              
       });
