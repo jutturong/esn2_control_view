@@ -61,28 +61,7 @@
                   if(e.keyCode==13)
                     {                        
                                
-                               /*
-                                if(  b >= 0  &&  a >= 0  )
-                                {
-
-                                   //$.messager.alert("ผลการคำนวณ",'ทดสอบ',"info");
-                                    if( b > a )
-                                    {
-                                        ya=(100*b)/a;
-+                                      y2=ya-100;
-+                                      if(  y2  <= 25 )
-+                                      {
-+                                         //$("#clinic_response").val('Same');
-                                             alert('Same'); 
-+                                      }
-+                                      else if (    y2  > 25 )
-+                                      {
-+                                         //$("#clinic_response").val('Worse');
-                                            alert('Worse');    
-+                                      }
-                                    }
-                                }
-                                */
+                  
                                 
                                  if(  b >= 0  &&  a >= 0  )
                                 {
@@ -103,6 +82,32 @@
 +                                      }
                                     }
                                 }
+                                else if ( b< a ) 
+                                {
+                                        //alert("ลด");
+                                        ya=(100*b)/a;
+                                        y2=100-ya;
+                                        if( y2 > 25  &&  y2 <=50 )
+                                        {
+                                           // $("#clinic_response").val('Moderated Improvement');
+                                        }
+                                        else if ( y2 > 50  )
+                                        {
+                                           //  $("#clinic_response").val('Marked Improvement');
+                                        }
+                                        else if  ( y2 <= 25 )
+                                        {
+                                           // $("#clinic_response").val('Same');
+                                        }
+                                }
+                                else  if  ( b = a  ) // ไม่เพิ่มไม่ลด  ECli5=Seizure free หมายถึง ไม่ชักเลย ต้องเป็น 0  เท่าเดิม
+                                {
+                                       // $("#clinic_response").val('Seizure free');
+                                 
+                                }
+
+
+
                     }
             });
              
