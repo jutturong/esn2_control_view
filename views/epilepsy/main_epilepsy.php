@@ -81,27 +81,32 @@
                                                                                    $('#calEPI').textbox('setValue','Worse');
                                                                            }
                                             }
+                                             else if ( b< a ) // ลด
+                                            {	
+                                                               ya=(100*b)/a;
+                                                               y2=100-ya;
+                                                              if( y2 > 25  &&  y2 <=50 )
+                                                             {
+                                                                                //  $("#clinic_response").val('Moderated Improvement');
+                                                                                  $('#calEPI').textbox('setValue','Moderated Improvement');
+                                                              }
+                                                               else if ( y2 > 50  )
+                                                               {
+                                                                                 // $("#clinic_response").val('Marked Improvement');
+                                                                                       $('#calEPI').textbox('setValue','Moderated Improvement');
+                                                               }
+                                                               else if  ( y2 <= 25 )
+                                                              {
+                                                                                 // $("#clinic_response").val('Same');
+                                                                                 $('#calEPI').textbox('setValue','Same'); 
+                                                              }
+                                          }  
+                                            
+                                            
+                                            
+                                            
                                 }
-                                 else if ( b< a ) // ลด
-                                {	
-                                                   ya=(100*b)/a;
-                                                   y2=100-ya;
-                                                  if( y2 > 25  &&  y2 <=50 )
-                                                 {
-                                                                    //  $("#clinic_response").val('Moderated Improvement');
-                                                                      $('#calEPI').textbox('setValue','Moderated Improvement');
-                                                  }
-                                                   else if ( y2 > 50  )
-                                                   {
-                                                                     // $("#clinic_response").val('Marked Improvement');
-                                                                           $('#calEPI').textbox('setValue','Moderated Improvement');
-                                                   }
-                                                   else if  ( y2 <= 25 )
-                                                  {
-                                                                     // $("#clinic_response").val('Same');
-                                                                     $('#calEPI').textbox('setValue','Same'); 
-                                                  }
-                              }  
+                                
                  
                
          
