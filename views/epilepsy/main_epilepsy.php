@@ -56,7 +56,7 @@
          function calEPI_()
          {
                  //  $.messager.alert("","test","");
-               var  a= parseInt( $('#frequency').numberspinner('getValue') );  //ชักครั้งก่อน
+               var  a= parseInt( $('#frequency').numberbox('getValue') );  //ชักครั้งก่อน
                var  b= parseInt( $('#clinic_response').textbox('getValue') ); //ชักปัจจุบัน
                
         
@@ -106,11 +106,15 @@
                                                        // $("#clinic_response").val('Seizure free');
 			 $('#calEPI').textbox('setValue','Seizure free'); 					 
                                             }
-                                            
-                                            
-                                            
+ 
                                 }
-                                
+                                 else
+		{
+		        $.messager.alert("แสดงสถานะการระบุค่าการกรอกข้อมูล","ระบุค่า Frequency (time/month) ให้ถูกต้อง !!","error");
+		        //$("#frequency").val('');
+                                             //   $('#frequency').
+	                           //$("#frequency").focus();
+		}	
                  
                
          
