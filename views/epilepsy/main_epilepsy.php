@@ -111,9 +111,7 @@
                                  else
 		{
 		        $.messager.alert("แสดงสถานะการระบุค่าการกรอกข้อมูล","ระบุค่า Frequency (time/month) ให้ถูกต้อง !!","error");
-		        //$("#frequency").val('');
-                                             //   $('#frequency').
-	                           //$("#frequency").focus();
+                                          //  $('#frequency').numberbox.('focus')
 		}	
                  
                
@@ -226,7 +224,7 @@
 101=Duration of Attack
 -->
 
-<div id="add_epilepsy" class="easyui-dialog" style="width:800px;height:500px;padding:10px 20px"
+<div id="add_epilepsy" class="easyui-dialog" style="width:600px;height:550px;padding:10px 20px"
             closed="true" buttons="#dlg-buttons" data-options=" modal:true ">
         <!-- <div class="ftitle">เพิ่มข้อมูล Epilepsy Clinic</div> -->
         <form id="fm_epilepsy" method="post" novalidate>
