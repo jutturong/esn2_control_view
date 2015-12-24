@@ -3,7 +3,8 @@
     <head>
         
         
-        <!-- test git form macbook -->
+        <!-- test git for test-branches -->
+        <!-- test git 2 for synce -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><?=$title?></title>
         
